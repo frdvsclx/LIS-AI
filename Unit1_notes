@@ -2,7 +2,10 @@ The Agent Workflow:
 
 Think → Act → Observe.
 
+
 An Agent is a system that leverages an AI model to interact with its environment in order to achieve a user-defined objective. It combines reasoning, planning, and the execution of actions (often via external tools) to fulfill tasks.
+
+Think of the Agent as having two main parts:
 
 The Brain (AI Model):
 This is where all the thinking happens. The AI model handles reasoning and planning. It decides which Actions to take based on the situation.
@@ -10,7 +13,7 @@ This is where all the thinking happens. The AI model handles reasoning and plann
 The Body (Capabilities and Tools)
 This part represents everything the Agent is equipped to do.
 
-The scope of possible actions depends on what the agent has been equipped with
+***The scope of possible actions depends on what the agent has been equipped with.
 
 An Agent can perform any task we implement via Tools to complete Actions.
 
@@ -21,4 +24,40 @@ Understand natural language: Interpret and respond to human instructions in a me
 Reason and plan: Analyze information, make decisions, and devise strategies to solve problems.
 
 Interact with its environment: Gather information, take actions, and observe the results of those actions.
+
+*******WHATS LLMs?******
+
+Most LLMs nowadays are built on the Transformer architecture—a deep learning architecture based on the “Attention” algorithm.
+
+There are 3 types of transformers:
+
+1)Encoders
+An encoder-based Transformer takes text (or other data) as input and outputs a dense representation (or embedding) of that text.
+
+Example: BERT from Google
+Use Cases: Text classification, semantic search, Named Entity Recognition
+Typical Size: Millions of parameters
+
+2)Decoders
+A decoder-based Transformer focuses on generating new tokens to complete a sequence, one token at a time.
+
+Example: Llama from Meta
+Use Cases: Text generation, chatbots, code generation
+Typical Size: Billions (in the US sense, i.e., 10^9) of parameters
+
+
+3)Seq2Seq (Encoder–Decoder)
+A sequence-to-sequence Transformer combines an encoder and a decoder. The encoder first processes the input sequence into a context representation, then the decoder generates an output sequence.
+
+Example: T5, BART
+Use Cases: Translation, Summarization, Paraphrasing
+Typical Size: Millions of parameters
+
+****The underlying principle of an LLM is simple yet highly effective: its objective is to predict the next token, given a sequence of previous tokens. A “token” is the unit of information an LLM works with. You can think of a “token” as if it was a “word”, but for efficiency reasons LLMs don’t use whole words.
+
+**********Understanding next token prediction.********
+
+LLMs are said to be autoregressive, meaning that the output from one pass becomes the input for the next one. This loop continues until the model predicts the next token to be the EOS(end of sequence) token, at which point the model can stop.
+
+
 
